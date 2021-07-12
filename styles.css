@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --slantedText: "Grand Hotel", cursive;
+  --primaryColor: #698f3f;
+  --mainWhite: #fff;
+  --mainGrey: #e5e5e5;
+  --letterSpacing: 0.5rem;
+}
+
+body {
+  font-family: "Catamaran", sans-serif;
+  line-height: 1.5;
+}
+
+/* helper/utility classes */
+
+.text-center {
+  text-align: center;
+}
+
+/* clearfix */
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* globals */
+.section-center {
+  padding: 4rem 0;
+  width: 80vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.section-subtitle {
+  font-size: 2rem;
+  font-family: var(--slantedText);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+  color: var(--primaryColor);
+}
+.section-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/* header */
+.header {
+  min-height: 10vh;
+}
+
+.title {
+  font-size: 1rem;
+  font-family: var(--slantedText);
+  letter-spacing: var(--letterSpacing);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* images */
+.images {
+  background: var(--mainGrey);
+}
+.images-title {
+  padding-top: 4rem;
+}
+.image-card {
+  border: 0.3rem solid var(--primaryColor);
+  padding: 0.2rem;
+  border-radius: 1rem;
+  margin: 2rem 0;
+}
+.single-img {
+  width: 100%;
+  display: block;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 00.5rem;
+  object-fit: contain;
+  height: 251px;
+  cursor: pointer;
+}
+.image-info {
+  background: var(--primaryColor);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: var(--letterSpacing);
+  color: var(--mainWhite);
+  text-transform: capitalize;
+  padding: 2.5rem 0 1rem 0;
+}
+.image-like {
+  display: inline-block;
+  background: var(--mainWhite);
+  text-decoration: none;
+  padding: 0 1.1rem;
+  color: var(--primaryColor);
+  border: 0.2rem solid var(--mainWhite);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+.img-container {
+  position: relative;
+}
+.heart-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	filter: drop-shadow(0 19px 38px rgba(0, 0, 0, 0.7));
+	transform-origin: center center;
+	width: 0;
+}
+@media screen and (min-width: 992px) {
+  .image-card {
+    float: left;
+    width: 45%;
+    margin-right: 5%;
+  }
+}
+@media screen and (min-width: 1133px) {
+  .image-card {
+    float: left;
+    width: 30%;
+    margin-right: 3.33333%;
+  }
+}
+
+/* end images */
+
+/* Tap animation */
+.animate-like {
+	animation: 2s animateLike ease-in-out forwards;
+}
+@keyframes animateLike {
+	0% {
+		width: 0;
+	}
+	5% {
+		width: 180px;
+	}
+	10% {
+		width: 150px;
+	}
+	20%,
+	35% {
+		width: 160px;
+	}
+	40%,
+	100% {
+		width: 0;
+	}
+}
